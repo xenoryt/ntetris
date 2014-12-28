@@ -5,6 +5,7 @@ OBJECTS = main.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
+	@mkdir bin
 	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC} -lncurses
 
 -include ${DEPENDS}
