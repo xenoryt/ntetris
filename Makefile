@@ -1,6 +1,6 @@
 CXX = gcc
 CXXFLAGS = -Wall -MMD
-EXEC = main
+EXEC = bin/main
 OBJECTS = main.o
 DEPENDS = ${OBJECTS:.o=.d}
 
