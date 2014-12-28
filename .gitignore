@@ -4,6 +4,14 @@
 *.obj
 *.elf
 
+# Dependency file
+*.d
+
+# Temp files
+*.swp
+*.swo
+.#*
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -21,6 +29,7 @@
 *.dylib
 
 # Executables
+bin/*
 *.exe
 *.out
 *.app
