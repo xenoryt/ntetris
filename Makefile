@@ -1,12 +1,12 @@
-CXX = gcc
-CXXFLAGS = -Wall -MMD
+C = gcc
+CFLAGS = -Wall -MMD
 EXEC = bin/main
 OBJECTS = main.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
-	@mkdir bin
-	${CXX} ${CXXFLAGS} ${OBJECTS} -o ${EXEC} -lncurses
+	@mkdir -p bin
+	${C} ${CFLAGS} ${OBJECTS} -o ${EXEC} -lncurses
 
 -include ${DEPENDS}
 
