@@ -1,6 +1,8 @@
 #include <ncurses.h>
 #include "board.h"
 
+//to sleep use napms
+
 int main()
 {
     initscr();
@@ -26,6 +28,7 @@ int main()
 				break;
 		}
 	}
+    
     endwin();
 
     return 0;

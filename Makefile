@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -MMD
+CFLAGS = -Wall -MMD -std=c99
 EXEC = bin/main
 OBJECTS = main.o board.o
 DEPENDS = ${OBJECTS:.o=.d}
