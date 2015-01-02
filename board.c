@@ -41,9 +41,9 @@ void update_board(WINDOW * board)
 
 static void print_block(WINDOW * board, const struct block const * block)
 {
-    attron(COLOR_PAIR(block->color));
+    wattron(board, COLOR_PAIR(block->color));
     mvwprintw(board, block->y, 1 + block->x * 2, "te");
-    attroff(COLOR_PAIR(block->color));
+    wattroff(board, COLOR_PAIR(block->color));
 }
 
 
