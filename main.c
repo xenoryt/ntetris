@@ -9,6 +9,7 @@ int main()
     init_colors();
 	noecho();
 	curs_set(0);
+	timeout(0);
     
     WINDOW * board = new_board();
     //mvwprintw(board, 1, 1, "00112233445566778899");

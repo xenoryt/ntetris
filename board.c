@@ -28,3 +28,21 @@ WINDOW * new_board()
 
 static void printBlock(WINDOW* board, struct block block) {
 }
+
+
+static void rotr(struct tetro *tetro) {
+	int i;
+	for(i = 0; i < 4; i++){ 
+		struct block *b = &tetro->blocks[i];
+		b->x = b->x - tetro->x;
+		b->y = b->y - tetro->y;
+		int tmp = b->x;
+		b->x = -b->y;
+		b->y = tmp;
+		b->x += tetro->x;
+		b->y += tetro->y;
+	}
+}
+static void rotl(struct tetro *tetro) {
+}
+
