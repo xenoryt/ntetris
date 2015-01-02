@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -MMD -std=c99 -Wunused-function
+CFLAGS = -Wall -MMD -std=c99 -Wno-unused-function
 EXEC = bin/main
 OBJECTS = main.o board.o
 DEPENDS = ${OBJECTS:.o=.d}
