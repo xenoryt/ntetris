@@ -26,7 +26,24 @@ WINDOW * new_board()
     return board;
 }
 
-static void printBlock(WINDOW* board, struct block block) {
+void update_board(WINDOW * board)
+{
+    static int i = 1;
+    struct block temp;
+    temp.y = i;
+    temp.x = i;
+    temp.color = 2;
+
+    i++;
+
+    print_block(board, &temp);
+}
+
+static void print_block(WINDOW * board, const struct block const * block)
+{
+    attron(COLOR_PAIR(block->color));
+    mvwprintw(board, block->y, 1 + block->x * 2, "te");
+    attroff(COLOR_PAIR(block->color));
 }
 
 

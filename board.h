@@ -2,7 +2,7 @@ struct block
 {
     int y;
     int x;
-    int colour;
+    int color;
 };
 
 //tetronimo
@@ -12,9 +12,10 @@ struct tetro {
 };
 
 void init_colors();
-void newBlock();
 WINDOW * new_board();
 
-static void printBlock(WINDOW*, struct block);
+static void print_block(WINDOW *, const struct block const *);
 static void rotr(struct tetro*);
 static void rotl(struct tetro*);
+
+void update_board(WINDOW *);
