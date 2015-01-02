@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -MMD
 EXEC = bin/main
-OBJECTS = main.o
+OBJECTS = main.o board.o
 DEPENDS = ${OBJECTS:.o=.d}
 
 ${EXEC}: ${OBJECTS}
