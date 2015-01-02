@@ -5,6 +5,7 @@ int main()
 {
     initscr();
     init_colors();
+    noecho();
     
     WINDOW * board = new_board();
 
@@ -18,9 +19,21 @@ int main()
 	wrefresh(board);
     }
     
-    getch();
-
-    delwin(board);
+    refresh();
+    wrefresh(board);
+    int ch;
+    while ((ch = getch()) != 'q') {
+	switch(ch) {
+	case KEY_LEFT:
+	    break;
+	case KEY_RIGHT:
+	    break;
+	case KEY_UP:
+	    break;
+	case KEY_DOWN:
+	    break;
+	}
+    }
     endwin();
 
     return 0;

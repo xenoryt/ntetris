@@ -20,7 +20,7 @@ void init_colors()
 
 WINDOW * new_board()
 {
-    WINDOW * board = newwin(ROWS + 2, COLUMNS + 2, 5, 5); //+2 for borders
+    WINDOW * board = newwin(ROWS + 2, COLUMNS + 2, 2, 2); //+2 for borders
     box(board, 0, 0);
 
     return board;
