@@ -27,6 +27,9 @@ int main()
 			default:
 				break;
 		}
+
+		refresh();
+		wrefresh(board);
 	}
     
     endwin();

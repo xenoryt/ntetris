@@ -26,3 +26,5 @@ WINDOW * new_board()
     return board;
 }
 
+static void printBlock(WINDOW* board, struct block block) {
+}
