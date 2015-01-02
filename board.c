@@ -7,7 +7,8 @@ const int COLUMNS = 10 * 2; //each block is 2 wide
 void init_colors()
 {
     start_color();
-    
+
+    //tetronimo colours
     init_pair(1, COLOR_RED, COLOR_RED);
     init_pair(2, COLOR_GREEN, COLOR_GREEN);
     init_pair(3, COLOR_YELLOW, COLOR_YELLOW);
