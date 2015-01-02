@@ -4,6 +4,8 @@
 const int ROWS = 20;
 const int COLUMNS = 10 * 2; //each block is 2 wide
 
+static void print_block(WINDOW *, const struct block const *);
+
 void init_colors()
 {
     start_color();
@@ -26,5 +28,22 @@ WINDOW * new_board()
     return board;
 }
 
-static void printBlock(WINDOW* board, struct block block) {
+void update_board(WINDOW * board)
+{
+    static int i = 1;
+    struct block temp;
+    temp.y = i;
+    temp.x = i;
+    temp.color = 2;
+
+    i++;
+
+    print_block(board, &temp);
+}
+
+static void print_block(WINDOW * board, const struct block const * block)
+{
+    attron(COLOR_PAIR(block->color));
+    mvwprintw(board, block->y, 1 + block->x * 2, "te");
+    attroff(COLOR_PAIR(block->color));
 }
