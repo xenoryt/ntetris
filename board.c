@@ -28,7 +28,7 @@ WINDOW * new_board()
 
 void update_board(WINDOW * board)
 {
-    static int i = 1;
+    static int i = 0;
     struct block temp;
     temp.y = i;
     temp.x = i;
@@ -42,7 +42,7 @@ void update_board(WINDOW * board)
 static void print_block(WINDOW * board, const struct block const * block)
 {
     wattron(board, COLOR_PAIR(block->color));
-    mvwprintw(board, block->y, 1 + block->x * 2, "te");
+    mvwprintw(board, 1 + block->y, 1 + block->x * 2, "  ");
     wattroff(board, COLOR_PAIR(block->color));
 }
 
