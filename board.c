@@ -124,7 +124,7 @@ WINDOW * new_board()
 
 void update_board(WINDOW * board)
 {
-    static int i = 1;
+    static int i = 0;
     struct block temp;
     temp.y = i;
     temp.x = i;
@@ -138,24 +138,6 @@ void update_board(WINDOW * board)
 static void print_block(WINDOW * board, const struct block const * block)
 {
     wattron(board, COLOR_PAIR(block->color));
-    mvwprintw(board, block->y, 1 + block->x * 2, "te");
+    mvwprintw(board, 1 + block->y, 1 + block->x * 2, "  ");
     wattroff(board, COLOR_PAIR(block->color));
 }
-
-
-static void rotr(struct tetro *tetro) {
-	int i;
-	for(i = 0; i < 4; i++){ 
-		struct block *b = &tetro->blocks[i];
-		b->x = b->x - tetro->x;
-		b->y = b->y - tetro->y;
-		int tmp = b->x;
-		b->x = -b->y;
-		b->y = tmp;
-		b->x += tetro->x;
-		b->y += tetro->y;
-	}
-}
-static void rotl(struct tetro *tetro) {
-}
-

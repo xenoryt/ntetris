@@ -12,11 +12,14 @@ int main()
     timeout(0);
 
     WINDOW * board = new_board();
-    //mvwprintw(board, 1, 1, "00112233445566778899");
 
-    int ch;
+    int level = 1; //1 to 10
     int done = 0;
-    while (!done) {
+    int ticks = 0; //number of iterations since last board update
+    
+    while (!done)
+    {
+	int ch;
         switch(ch = getch())
         {
             case 'q':
@@ -36,12 +39,18 @@ int main()
             default:
                 continue;
         }
-        update_board(board);
+	if(ticks >= (10 - level))
+	{
+	    update_board(board);
 
-        refresh();
-        wrefresh(board);
+	    refresh();
+	    wrefresh(board);
 
-        napms(500);
+	    ticks = 0;
+	}
+	ticks++;
+	
+        napms(50); //update every 0.05 seconds
     }
 
     endwin();
