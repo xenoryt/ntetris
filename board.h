@@ -7,9 +7,9 @@ struct block
 
 //tetronimo
 struct tetro {
-	int x,y;
-	struct block blocks[4][4];
-	int rot;
+    int x,y;
+    struct block blocks[4][4];
+    int rot;
 };
 
 void init_colors();
