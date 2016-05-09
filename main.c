@@ -1,10 +1,23 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include <ncurses.h>
 #include "board.h"
 
-//to sleep use napms
-
-int main()
+int main(int argc, char * argv[])
 {
+	if(argc != 2)
+	{
+		printf("Usage: %s [level]\n", argv[0]);
+		return 0;
+	}	
+
+	int level = atoi(argv[1]);
+	if(level < 1 || level > 10)
+	{
+		printf("level must be 1-10\n");
+		return 0;
+	}
+	
 	initscr();
 	init_colors();
 	init_tetros();
@@ -14,7 +27,6 @@ int main()
 
 	WINDOW * board = new_board();
 
-	int level = 1; //1 to 10
 	int done = 0;
 	int ticks = 0; //number of iterations since last board update
 
